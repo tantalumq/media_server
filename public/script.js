@@ -98,8 +98,10 @@ ws.addEventListener("message", (event) => {
 });
 
 setInterval(() => {
-    let width = (position / length) * (26 * Math.pow(10, 6));
-    position += 0.1;
-    progressbar.style.width = width + "px"
-    dot.style.left = width - 4 + "px";
+    if (is_play) {
+        let width = (position / length) * (26 * Math.pow(10, 6));
+        position += 0.1;
+        progressbar.style.width = width + "px"
+        dot.style.left = width - 4 + "px";
+    }
 }, 100);
