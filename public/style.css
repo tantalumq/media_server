@@ -6,6 +6,7 @@ html,body {
 * {
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 .container {
@@ -17,16 +18,20 @@ html,body {
 }
 
 .info {
+    position: relative;
     height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: center;
     padding-left: 15px;
+    width: 260px;
 }
 
 .cover {
     border-radius: 32px;
+    width: 350px;
+    height: 350px;
 }
 
 span {
@@ -36,11 +41,13 @@ span {
 .track {
     font-size: 32px;
     color: #d9d9d9;
+    user-select: text;
 }
 
 .artist {
     font-size: 20px;
     color: #b1b1b1;
+    user-select: text;
 }
 
 .progressbar {
@@ -71,13 +78,26 @@ span {
 }
 
 .controls {
+    position: relative;
     padding-top: 13px;
 }
 
-.icon {
-    
-    padding-right: 16px;
-
+button {
+    margin-right: 16px;
+    background: none;
+    border: none;
 }
 
+button:hover > svg{
+    stroke: #ffffff;
+}
 
+button:active > svg{
+    stroke: #e2e2e2;
+    stroke-width: 2.5px;
+}
+
+button:focus-visible {
+    outline: none;
+    border: none;
+}
